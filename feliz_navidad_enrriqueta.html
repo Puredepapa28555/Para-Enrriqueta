@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Navidad Enrriqueta :D</title>
+
+    <style>
+        body {
+            background: linear-gradient(#dbeafe, #93c5fd);
+            font-family: "Georgia", serif;
+            text-align: center;
+            color: #5a1a2f;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 22px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .foto {
+            width: 100px; /* ajustado */
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .fade-in {
+            animation: aparecer 3s ease;
+        }
+
+        .foto.fade-in {
+            animation-delay: 1s;
+        }
+
+        p.fade-in {
+            animation-delay: 2s;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 6s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: white;
+            font-size: 15px;
+            user-select: none;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(0) }
+            100% { transform: translateY(100vh) }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Copitos de nieve -->
+    <script>
+        const snowCount = 30;
+        for(let i=0; i<snowCount; i++){
+            let snow = document.createElement('div');
+            snow.className = 'snowflake';
+            snow.style.left = Math.random() * window.innerWidth + 'px';
+            snow.style.fontSize = (10 + Math.random() * 15) + 'px';
+            snow.innerText = '❄️';
+            document.body.appendChild(snow);
+        }
+    </script>
+
+    <h1 class="fade-in">🎄 Feliz Navidad, Enrriqueta :DD 🎄</h1>
+
+    <img src="Miamor.jpg" class="foto fade-in">
+
+    <p class="fade-in">
+        Mi Vro Enrriqueta 👽<br><br>
+        Quise hacerte esta pequeña carta  
+        porque es navidad y pues quería programar xd.<br><br>
+        Gracias por todo este año, gracias por las risas.  
+        Eres una persona genial y me encanta como eres.<br>
+        Te valoro más de lo que este código puede decir xdd 💙
+    </p>
+
+    <!-- Cositas flotando -->
+    <div class="heart" style="left:10%;">❄️</div>
+    <div class="heart" style="left:30%;">⛄</div>
+    <div class="heart" style="left:50%;">😺</div>
+    <div class="heart" style="left:70%;">🐈</div>
+    <div class="heart" style="left:90%;">🙀</div>
+
+     <audio autoplay loop controls>
+        <source src="numbers.mp3" type="audio/mpeg">
+    </audio>
+
+</body>
+</html>
